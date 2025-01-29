@@ -19,7 +19,7 @@ namespace mPath.Controllers
     [HttpPost("login")]
     public IActionResult Login([FromBody] LoginRequest request)
     {
-      if (request.Username is "admin" or "user"
+      if (request.Username is "admin" or "healthcare"
           && request.Password == "password") 
       {
         var tokenHandler = new TokenService
