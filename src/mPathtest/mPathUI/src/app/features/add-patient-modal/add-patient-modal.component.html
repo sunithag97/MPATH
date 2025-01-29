@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Add Patient</h2>
+<mat-dialog-content>
+  <form [formGroup]="addPatientForm" (ngSubmit)="onAddPatient()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+      <mat-error *ngIf="addPatientForm.get('name')?.hasError('required')">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Date of Birth</mat-label>
+      <input matInput formControlName="dateOfBirth" type="date">
+      <mat-error *ngIf="addPatientForm.get('dateOfBirth')?.hasError('required')">
+        Date of Birth is required
+      </mat-error>
+      <mat-error *ngIf="addPatientForm.get('dateOfBirth')?.hasError('invalidDateOfBirth')">
+        Date of Birth cannot be in the future
+      </mat-error>
+    </mat-form-field>
+   
+    <mat-form-field appearance="fill">
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option value="male">Male</mat-option>
+          <mat-option value="female">Female</mat-option>
+          <mat-option value="other">Other</mat-option>
+        </mat-select>
+        <mat-error *ngIf="addPatientForm.get('gender')?.hasError('required')">
+          Gender is required
+        </mat-error>
+      </mat-form-field>
+   
+    <div mat-dialog-actions>
+      <button mat-button type="button" (click)="onClose()">Cancel</button>
+      <button mat-raised-button color="primary" type="submit">Add</button>
+    </div>
+  </form>
+</mat-dialog-content>

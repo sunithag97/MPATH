@@ -1,0 +1,35 @@
+<!-- filepath: /c:/Users/v771151/source/Persons/MPath/mPathApp/src/app/login/login.component.html -->
+<div class="container vh-100">
+    <div class="row justify-content-center h-100">
+        <div class="card my-auto shadow">
+            <div class="card-body px-5">
+                <!-- <div class="text-center">
+                    <fa-icon [icon]="faLock" class="fa-3x"></fa-icon>
+                </div> -->
+                <div class="text-center">
+                    <h2>Welcome to mPath</h2>
+                </div>
+                <p style="color: lightslategray; text-align: center;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please enter your login
+                    details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <div class="form-group">
+                        <mat-form-field appearance="fill" class="full-width">
+                            <mat-label>Username</mat-label>
+                            <input matInput formControlName="username">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="fill" class="full-width">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" formControlName="password">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group button-container">
+                        <button type="submit" mat-raised-button color="primary" class="full-width">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+@mPath_HostAddress = http://localhost:5109
+
+GET {{mPath_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

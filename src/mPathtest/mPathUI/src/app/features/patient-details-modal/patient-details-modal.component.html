@@ -1,0 +1,19 @@
+<!-- filepath: src/app/features/patient-details-modal/patient-details-modal.component.html -->
+<h2 mat-dialog-title>Patient Details</h2>
+<mat-dialog-content>
+  <p><strong>Name:</strong> {{ data.name }}</p>
+  <p><strong>Date of Birth:</strong> {{ data.dateOfBirth }}</p>
+  <p><strong>Gender:</strong> {{ data.gender }}</p>
+  <!-- Add more fields as needed -->
+  <h3>Recommendations</h3>
+  <ul>
+    <li *ngFor="let recommendation of data.recommendations">
+      <input type="checkbox" [checked]="recommendation.completed" (change)="toggleRecommendationCompletion(recommendation)">
+      {{ recommendation.type }}: {{ recommendation.description }}
+    </li>
+  </ul>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onClose()">Close</button>
+</mat-dialog-actions>

@@ -1,0 +1,30 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="isSidenavOpened" class="sidenav">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/patients">Patients</a>
+      <a mat-list-item routerLink="/appointmentscheduler">Appointment Scheduler</a>
+    </mat-nav-list>
+    <div class="sidenav-footer">
+      <mat-divider></mat-divider>
+      <div class="profile-section">
+        <mat-icon>account_circle</mat-icon>
+        <span>Welcome {{ userName }}</span>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="toolbar">
+      <button mat-icon-button (click)="toggleSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>mPath Patient Management System</span>
+      <span class="spacer"></span>
+      <button mat-button (click)="onLogout()">Logout</button>
+    </mat-toolbar>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

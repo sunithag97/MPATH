@@ -1,0 +1,40 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sidenav-footer {
+  margin-top: auto;
+  padding: 16px;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+}
+
+.profile-section mat-icon {
+  margin-right: 8px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
